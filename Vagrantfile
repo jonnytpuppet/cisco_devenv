@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
       vb.customize ['modifyvm',:id,'--nicpromisc8','allow-all']
     end
     n9kv1.vm.provision "shell", inline: "sudo ip netns exec management echo 'nameserver 8.8.8.8\ndomain puppetlabs.net' > /etc/resolv.conf"
-    n9kv1.vm.provision "shell", inline: "sudo ip netns exec management yum install -y http://yum.puppetlabs.com/puppetlabs-release-pc1-nxos-5.noarch.rpm"
+    n9kv1.vm.provision "shell", inline: "sudo ip netns exec management yum install -y http://yum.puppetlabs.com/puppetlabs-release-pc1-cisco-wrlinux-5.noarch.rpm"
     n9kv1.vm.provision "shell", inline: "sudo ip netns exec management yum install -y puppet-agent"
     n9kv1.vm.provision "shell", inline: "sudo ip netns exec management echo '192.168.1.3 puppet pe-puppet pe-puppet.localdomain' >> /etc/hosts"
   end
