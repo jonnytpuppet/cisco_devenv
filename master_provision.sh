@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if ! `grep puppet /etc/hosts` ; then
-  echo >> /etc/hosts <<EOF
+  cat >> /etc/hosts <<EOF
 127.0.0.1 puppet pe-puppet pe-puppet.localdomain
 EOF
 fi
