@@ -1,5 +1,6 @@
 Vagrant.configure(2) do |config|
   config.vm.define "master" do |master|
+    master.vm.hostname = "pe-puppet.localdomain"
     master.vm.box = "puppetlabs/centos-7.0-64-nocm"
     master.vm.network "private_network", ip: "192.168.1.3", virtualbox_intnet: "nxosv_network1"
     master.vm.provision "shell", inline: "sudo /vagrant/master_provision.sh"
