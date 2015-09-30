@@ -1,6 +1,6 @@
 #!/bin/sh
 
-vagrant ssh-config > files/vagrant.ssh-config
+vagrant ssh-config n9kv1 > files/vagrant.ssh-config
 cd cisco-nxapi
 gem build cisco_nxapi.gemspec
 scp -F ../files/vagrant.ssh-config *.gem n9kv1:/var/home/vagrant
