@@ -3,6 +3,9 @@ Vagrant.configure(2) do |config|
     master.vm.box = "puppetlabs/centos-7.0-64-nocm"
     master.vm.network "private_network", ip: "192.168.1.3", virtualbox_intnet: "nxosv_network1"
     master.vm.provision "shell", inline: "sudo /vagrant/master_provision.sh"
+    master.vm.provider "virtualbox" do |v|
+      v.memory = 4096
+    end
   end
   config.vm.define "n9kv1" do |n9kv1|
     n9kv1.vm.box = "n9kv"
