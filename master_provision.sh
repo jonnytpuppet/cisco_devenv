@@ -16,6 +16,8 @@ if ! [ -d /opt/puppetlabs ] ; then
 fi
 echo 1 > /proc/sys/net/ipv4/ip_forward
 echo net.ipv4.ip_forward = 1 > /etc/sysctl.d/ip_forward.conf
+/sbin/iptables -D INPUT -j REJECT --reject-with icmp-host-prohibited
+/sbin/iptables -D FORWARD -j REJECT --reject-with icmp-host-prohibited
 /sbin/iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
 /sbin/iptables -A FORWARD -i enp0s3 -o enp0s8 -m state --state RELATED,ESTABLISHED -j ACCEPT
 /sbin/iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT
