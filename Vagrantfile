@@ -32,7 +32,8 @@ Vagrant.configure(2) do |config|
     n9kv1.vm.provision "shell", inline: "sudo echo 'nameserver 8.8.8.8\ndomain puppetlabs.net' > /etc/resolv.conf"
     n9kv1.vm.provision "shell", inline: "sudo ip netns exec management yum install -y http://yum.puppetlabs.com/puppetlabs-release-pc1-cisco-wrlinux-5.noarch.rpm"
     n9kv1.vm.provision "shell", inline: "sudo ip netns exec management yum install -y puppet-agent"
-    n9kv1.vm.provision "shell", inline: "sudo echo '192.168.1.2 puppet pe-puppet pe-puppet.localdomain' >> /etc/hosts"
+    n9kv1.vm.provision "shell", inline: "sudo echo '10.168.1.2 puppet pe-puppet pe-puppet.localdomain' >> /etc/hosts"
+    n9kv1.vm.provision "shell", inline: "sudo /opt/puppetlabs/puppet/bin/gem install cisco_node_utils cisco_nxapi"
   end
 end
 
