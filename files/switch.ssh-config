@@ -1,0 +1,11 @@
+Host n9kv1
+  HostName 10.168.1.3
+  User vagrant
+  Port 22
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /home/hunner/.vagrant.d/insecure_private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+
