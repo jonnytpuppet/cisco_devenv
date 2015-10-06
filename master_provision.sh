@@ -6,7 +6,7 @@ if ! `grep puppet /etc/hosts` ; then
 EOF
 fi
 if ! [ -f /vagrant/files/puppet-enterprise-2015.2.1-el-7-x86_64.tar ] ; then
-  curl http://enterprise.delivery.puppetlabs.net/2015.2/ci-ready/puppet-enterprise-2015.2.1-el-7-x86_64.tar > /vagrant/files/puppet-enterprise-2015.2.1-el-7-x86_64.tar
+  curl http://enterprise.delivery.puppetlabs.net/2015.2/ci-ready/puppet-enterprise-2015.2.2-rc0-1-g788e83f-el-7-x86_64.tar > /vagrant/files/puppet-enterprise-2015.2.1-el-7-x86_64.tar
 fi
 if ! [ -d $HOME/puppet-enterprise-2015.2.1-el-7-x86_64 ] ; then
   tar xvf /vagrant/files/puppet-enterprise-2015.2.1-el-7-x86_64.tar -C $HOME
