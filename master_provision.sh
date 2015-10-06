@@ -12,8 +12,11 @@ if ! [ -d $HOME/puppet-enterprise-2015.2.1-el-7-x86_64 ] ; then
   tar xvf /vagrant/files/puppet-enterprise-2015.2.1-el-7-x86_64.tar -C $HOME
 fi
 if ! [ -d /opt/puppetlabs ] ; then
-  $HOME/puppet-enterprise-2015.2.1-el-7-x86_64/puppet-enterprise-installer -a $HOME/puppet-enterprise-2015.2.1-el-7-x86_64/answers/all-in-one.answers.txt
+  $HOME/puppet-enterprise-2015.2.1-el-7-x86_64/puppet-enterprise-installer -a /vagrant/files/master.answers
 fi
+ln -s /vagrant/cisco-network-puppet-module /etc/puppetlabs/code/modules/cisco
+ln -s /vagrant/netdev_stdlib /etc/puppetlabs/code/modules/netdev_stdlib
+echo 10.168.1.3 >> /etc/puppetlabs/puppet/autosign.conf
 echo -e "root:vagrant" | chpasswd
 echo -e "vagrant:vagrant" | chpasswd
 echo 1 > /proc/sys/net/ipv4/ip_forward
