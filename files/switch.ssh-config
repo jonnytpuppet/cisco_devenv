@@ -10,7 +10,18 @@ Host n9kv1
   LogLevel FATAL
 
 Host vmp
-  HostName yb4qczdsv44wb36.delivery.puppetlabs.net
+  HostName n7undka14ptpd07.delivery.puppetlabs.net
+  User root
+  Port 22
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /Users/jonnyt/.ssh/id_rsa-acceptance
+  IdentitiesOnly yes
+  LogLevel FATAL
+
+Host master
+  HostName ox3x6km19u4w456.delivery.puppetlabs.net
   User root
   Port 22
   UserKnownHostsFile /dev/null
